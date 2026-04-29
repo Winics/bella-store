@@ -1,0 +1,52 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  z-index: 1000;
+
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.icon {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+
+  background: #B45777;
+  color: white;
+
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 600;
+  color: #B45777;
+  text-align: center;
+}
+
+.icon {
+  font-size: 20px;
+  cursor: pointer;
+}

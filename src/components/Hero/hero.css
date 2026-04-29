@@ -1,0 +1,181 @@
+/* HERO */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+
+  margin-top: -80px; /* ajusta conforme seu header */
+}
+
+/* IMAGEM DE FUNDO */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center right;
+  z-index: 1;
+}
+
+/* OVERLAY ESCURO */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.7),
+    transparent
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* CONTEÚDO */
+.hero-content {
+  position: relative;
+  z-index: 3;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: #fff;
+  max-width: 600px;
+}
+
+/* TAG */
+.tag {
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+/* TÍTULO */
+.hero-content h1 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.hero-content h1 span {
+  color: #B45777;
+}
+
+/* TEXTO */
+.hero-content p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #ddd;
+}
+
+/* BOTÕES */
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* BOTÃO PRINCIPAL */
+.primary {
+  background: linear-gradient(135deg, #B45777, #EC9FBF);
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.primary:hover {
+  transform: scale(1.05);
+}
+
+/* BOTÃO SECUNDÁRIO */
+.outline {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 12px 22px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.outline:hover {
+  background: white;
+  color: black;
+}
+
+/* BARRA INFERIOR (GLASS) */
+.hero-overlay-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  z-index: 4;
+
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* CONTEÚDO DA BARRA */
+.overlay-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+/* ITENS */
+.item {
+  text-align: center;
+  color: white;
+}
+
+.item strong {
+  display: block;
+  font-size: 18px;
+}
+
+.item span {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.hero-content {
+  animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .hero {
+    height: 90vh;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .overlay-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
